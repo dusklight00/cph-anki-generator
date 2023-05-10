@@ -1,6 +1,7 @@
-import anki
+from module_parser import parse_qa_bundle
 
-deck = anki.make_deck("example_deck")
-note = anki.make_note("front", "back")
-deck.add_note(note)
-anki.generate_anki(deck, "output.apkg")
+notes = parse_qa_bundle(
+    question_path="modules/module-1.txt", answer_path="modules/module-1-answers.txt"
+)
+
+print(notes)
